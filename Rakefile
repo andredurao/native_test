@@ -2,6 +2,7 @@
 
 require 'rubygems'
 require 'rake/extensiontask'
+require "bundler/gem_tasks"
 
 spec = Gem::Specification.new do |s|
   s.name = 'native_test'
