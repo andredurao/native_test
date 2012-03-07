@@ -1,0 +1,5 @@
+.autotest
+.bundle
+.DS_Store
+.rvmrc
+tmp/
