@@ -1,0 +1,8 @@
+.autotest
+History.txt
+Manifest.txt
+README.txt
+Rakefile
+bin/native_test
+lib/native_test.rb
+test/test_native_test.rb
