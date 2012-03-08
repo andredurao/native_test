@@ -12,8 +12,14 @@ static VALUE test_scanf(VALUE mod){
   return rb_int_new(ret_val);	
 }
 
+static VALUE my_string_test(VALUE klass){
+	return rb_str_new2("test");
+}
+
 void Init_native_test(){
   VALUE mNative_test = rb_define_module("NativeTest");
   rb_define_singleton_method(mNative_test, "hello_world", hello_world, 0);
   rb_define_singleton_method(mNative_test, "test_scanf", test_scanf, 0);
+  VALUE rb_cString = rb_define_class("String", rb_cObject);
+  rb_define_method(rb_cString, "my_string_test", my_string_test, 1);
 }
