@@ -15,4 +15,9 @@ class TestNativeTest < Test::Unit::TestCase
     assert_equal 'test', str.my_string_test
   end
   
+  def test_string_scanf
+    str = "str"
+    assert_equal 'scanf = 4', str.scanf(1,2,3,4)
+  end  
+  
 end
