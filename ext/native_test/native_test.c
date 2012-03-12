@@ -18,12 +18,15 @@ static VALUE my_string_test(VALUE klass){
 }
 
 /*
-
+MANDATORY: http://www.ruby-doc.org/docs/ProgrammingRuby/html/ext_ruby.html
 */
 static VALUE my_string_scanf(int argc, VALUE *argv, VALUE self){
 	char val[20];
 	sprintf(val, "scanf = %d", argc);
 	return rb_str_new2(val);
+	VALUE scanf_fmt, rest;
+	rb_scan_args(argc, argv, "1*", &scanf_fmt, &rest);	
+	Check_Type(scanf_fmt, T_STRING);
 }
 
 void Init_native_test(){
