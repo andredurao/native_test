@@ -3,7 +3,4 @@
 .DS_Store
 .rvmrc
 tmp/
-lib/*.bundle
-lib/*.o
-lib/native_test/*.bundle
-lib/native_test/*.o
+

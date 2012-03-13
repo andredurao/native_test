@@ -16,8 +16,14 @@ class TestNativeTest < Test::Unit::TestCase
   end
   
   def test_string_scanf
-    str = "str"
-    assert_equal 'scanf = 4', str.scanf(1,2,3,4)
+    scanf_result = "str".scanf("%d")
+    assert_equal Array, scanf_result.class
+    assert_equal 1,     scanf_result.size
+    
+    scanf_result = "str".scanf("%d:%d:%d")
+    assert_equal Array, scanf_result.class
+    assert_equal 3,     scanf_result.size
+    
   end  
   
 end
