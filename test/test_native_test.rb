@@ -22,8 +22,12 @@ class TestNativeTest < Test::Unit::TestCase
     
     scanf_result = "str".scanf("%d:%d:%d")
     assert_equal Array, scanf_result.class
-    assert_equal 3,     scanf_result.size
-    
+    assert_equal 3,     scanf_result.size    
   end  
+  
+  def test_string_to_seconds
+    assert_equal 30,  "00:00:30".to_seconds
+    assert_equal 190, "00:03:10".to_seconds    
+  end
   
 end

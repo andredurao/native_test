@@ -84,6 +84,18 @@ static VALUE my_string_scanf(VALUE self, VALUE scanf_fmt){
 	return output_ary;
 }
 
+
+static VALUE string_time_in_seconds(VALUE self){
+	int h, m, s;
+	char* scanf_str;
+	Check_Type(self, T_STRING);
+	scanf_str = StringValuePtr(self);
+  if (sscanf(scanf_str, "%d:%d:%d", &h, &m, &s) == 3) {
+      s = h * 3600L + m * 60L + s;
+  }
+	return(INT2FIX(s));
+}
+
 void Init_native_test(){
   VALUE mNative_test = rb_define_module("NativeTest");
   rb_define_singleton_method(mNative_test, "hello_world", hello_world, 0);
@@ -91,5 +103,5 @@ void Init_native_test(){
   VALUE rb_cString = rb_define_class("String", rb_cObject);
   rb_define_method(rb_cString, "my_string_test", my_string_test, 0);
   rb_define_method(rb_cString, "scanf", my_string_scanf, 1);
+  rb_define_method(rb_cString, "to_seconds", string_time_in_seconds, 0);
 }
-
