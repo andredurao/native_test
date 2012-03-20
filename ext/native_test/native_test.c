@@ -66,6 +66,11 @@ C     The same as lc.
       the next pointer must be a pointer to char
 */
 
+/*
+TODO: use avcall lib:
+doc: http://www.gnu.org/software/libffcall/avcall.html
+*/
+
 int* match_params(char* scanf_fmt){
 	
 }
