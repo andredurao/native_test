@@ -1,4 +1,5 @@
 require "rubygems"
+#gem "native_test", :path => "...my native_test path"
 require "bundler/setup"
 require "benchmark"
 require "scanf"
