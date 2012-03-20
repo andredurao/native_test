@@ -2,6 +2,7 @@ require "rubygems"
 require "bundler/setup"
 require "benchmark"
 require "scanf"
+Bundler.require(:default)
 
 n = 500000
 
